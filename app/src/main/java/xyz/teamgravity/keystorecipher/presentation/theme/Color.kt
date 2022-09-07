@@ -1,4 +1,4 @@
-package xyz.teamgravity.keystorecipher.ui.theme
+package xyz.teamgravity.keystorecipher.presentation.theme
 
 import androidx.compose.ui.graphics.Color
 
