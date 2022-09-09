@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">KeyStore Cipher</string>
+
+    <!-- Crypto -->
+    <string name="encrypt_string">Encrypt string</string>
+    <string name="encrypt">Encrypt</string>
+    <string name="decrypt">Decrypt</string>
 </resources>
