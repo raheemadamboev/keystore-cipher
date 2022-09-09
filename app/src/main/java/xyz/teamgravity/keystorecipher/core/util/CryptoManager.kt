@@ -24,8 +24,10 @@ class CryptoManager(
         const val ANDROID_KEYSTORE = "AndroidKeyStore"
     }
 
-    private val encryptCipher = Cipher.getInstance(TRANSFORMATION).apply {
-        init(Cipher.ENCRYPT_MODE, getKey())
+    private fun encryptCipher(): Cipher {
+        return Cipher.getInstance(TRANSFORMATION).apply {
+            init(Cipher.ENCRYPT_MODE, getKey())
+        }
     }
 
     private fun decryptCipher(vector: ByteArray): Cipher {
@@ -57,6 +59,7 @@ class CryptoManager(
     ///////////////////////////////////////////////////////////////////////////
 
     fun encrypt(data: ByteArray, output: OutputStream): ByteArray {
+        val encryptCipher = encryptCipher()
         val encryptedData = encryptCipher.doFinal(data)
         output.use { stream ->
             stream.write(encryptCipher.iv.size)
